@@ -52,35 +52,37 @@ lib/test/evaluation/local.py  # paths about testing
 ```
 
 ## Data Preparation
-prepare the LSOTB dataset. It should look like:
+prepare the LasHeR dataset. It should look like:
    ```
    ${PROJECT_ROOT}
-    -- LSOTB
-        -- Train
-            |-- TrainingData
-            |-- MyAnnotations
+    -- LasHeR
+        -- train/
+            |-- trainingset
+              |-- 1boygo
+              |-- ...
+              |-- trainingsetList.txt
+            |-- tracker_predicted
             ...
-        -- Eval
-            |-- aircraft_car
-            |-- airplane_H_001
-            |-- LSOTB-TIR-120.json
-            |-- LSOTB-TIR-136.json
-            |-- LSOTB-TIR-LT11.json
-            |-- LSOTB-TIR-ST100.json
+        -- test
+            |-- testingset
+              |-- 1blackteacher
+              |-- ...
+              |-- testingsetList.txt
    ```
 
 ## Training
-Download pre-trained `OSTrack_ep0300.pth.tar` from above driver link and put it under `$PROJECT_ROOT$/pretrained_models` . Then  
+Download pre-trained `OSTrack_videomambas_ep300.pth.tar` or `OSTrack_videomambam_ep300.pth.tar` from above driver link and put it under `$PROJECT_ROOT$/pretrained_models` . Then  
 
 ```
 bash xtrain.sh
+bash xtrain_motion.sh
 ```
 
-Replace `--config` with the desired model config under `experiments/refocus`. We use [wandb](https://github.com/wandb/client) to record detailed training logs, in case you don't want to use wandb, set `--use_wandb 0`.
+Replace `--config` with the desired model config under `experiments/refocus`.
 
 
 ## Evaluation
-Download the model weights `OSTrack_ep0060.pth.tar` from above driver link  
+Download the model weights from above driver link  
 
 Put the downloaded weights on `$PROJECT_ROOT$/checkpoints/`  
 
@@ -88,10 +90,22 @@ Change the corresponding values of `lib/test/evaluation/local.py` to the actual 
 
 ```
 bash ytest.sh
+bash ytest_motion.sh
+```
+
+## Test FLOPs, and Speed
+*Note:* The speeds reported in our paper were tested on a single RTX2080Ti GPU.
+
+```bash
+# Profiling vitb_256_mae_ce_32x4_ep300
+python tracking/profile_model.py --script ostrack --config vitb_256_mae_ce_32x4_ep300
+# Profiling vitb_384_mae_ce_32x4_ep300
+python tracking/profile_model.py --script ostrack --config vitb_384_mae_ce_32x4_ep300
 ```
 
 ## Acknowledgments
-- This repo is based on [OSTrack](https://github.com/botaoye/OSTrack) which is an excellent work.  
+* Thanks for the [OSTrack](https://github.com/botaoye/OSTrack), [Vim](https://github.com/hustvl/Vim) and [VideoMamba](https://github.com/OpenGVLab/VideoMamba) library, which helps us to quickly implement our ideas.
+ 
 
 ## Contact
 If you have any question, feel free to email laisimiao@mail.dlut.edu.cn. ^_^
