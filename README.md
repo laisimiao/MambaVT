@@ -19,7 +19,26 @@ MambaVT is a simple, neat, high-performance **unified Mamba-based tracking frame
 | MambaVT-M256 | 78.6         | 64.4        | 67.5              | 57.5        |
 
 ## Install the environment
-We've tested the results on the PyTorch2.1.1+cuda11.8+Python3.9+causal-conv1d==1.1.0
+We've tested the results on the PyTorch2.1.1+cuda11.8+Python3.9+causal-conv1d==1.1.0  
+
+**Option1**: Use the Anaconda (CUDA 11.8)
+```bash
+conda create -n mambavt python=3.9
+conda activate mambavt
+bash install.sh
+```
+  
+And we strongly recommend installing torch/torchvision/causal-conv1d manually by:  
+```bash
+# Download torch from: https://download.pytorch.org/whl/cu118/torch-2.1.1%2Bcu118-cp39-cp39-linux_x86_64.whl
+pip install torch-2.1.1%2Bcu118-cp39-cp39-linux_x86_64.whl
+
+# Download torchvision from: https://download.pytorch.org/whl/cu118/torchvision-0.16.1%2Bcu118-cp39-cp39-linux_x86_64.whl
+pip install torchvision-0.16.1%2Bcu118-cp39-cp39-linux_x86_64.whl
+
+# Download causal-conv1d from: https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.1.0/causal_conv1d-1.1.0+cu118torch2.1cxx11abiFALSE-cp39-cp39-linux_x86_64.whl
+pip install causal_conv1d-1.1.0+cu118torch2.1cxx11abiFALSE-cp39-cp39-linux_x86_64.whl
+```
 
 ## Set project paths
 Run the following command to set paths for this project
