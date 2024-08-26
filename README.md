@@ -78,7 +78,7 @@ bash xtrain.sh
 bash xtrain_motion.sh
 ```
 
-Replace `--config` with the desired model config under `experiments/refocus`.
+Replace `--config` with the desired model config under `experiments/mambatrack` or `experiments/mambatrack_motion`.
 
 
 ## Evaluation
@@ -86,7 +86,7 @@ Download the model weights from above driver link
 
 Put the downloaded weights on `$PROJECT_ROOT$/checkpoints/`  
 
-Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths. Then  
+Change the corresponding values of `lib/test/parameter/mambatrack_motion.py` to the actual checkpoint paths. Then  
 
 ```
 bash ytest.sh
@@ -94,13 +94,13 @@ bash ytest_motion.sh
 ```
 
 ## Test FLOPs, and Speed
-*Note:* The speeds reported in our paper were tested on a single RTX2080Ti GPU.
+*Note:* The speeds reported in our paper were tested on a single 3090 GPU.
 
 ```bash
-# Profiling vitb_256_mae_ce_32x4_ep300
-python tracking/profile_model.py --script ostrack --config vitb_256_mae_ce_32x4_ep300
-# Profiling vitb_384_mae_ce_32x4_ep300
-python tracking/profile_model.py --script ostrack --config vitb_384_mae_ce_32x4_ep300
+# Profiling mambavt_s256_ep20
+python tracking/profile_model.py --script mambatrack --config mambavt_s256_ep20
+# Profiling mambavt_m256_ep20
+python tracking/profile_model.py --script mambatrack --config mambavt_m256_ep20
 ```
 
 ## Acknowledgments
