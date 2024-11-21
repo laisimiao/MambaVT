@@ -3,7 +3,8 @@ The official implementation for the **\[AAAI 2025\]** paper: "MambaVT: Spatio-Te
 
 :rocket: Update Models and Results (2024/08/07)  
 [Models & Raw Results](https://drive.google.com/drive/folders/1Ww-cMuzJ-6XcnTSsPuedlyR_LWSgwAaR?usp=sharing) [Google Driver]  
-[Models & Raw Results](https://pan.baidu.com/s/1XaXsSrToDqbLLAStJcMr9g) [Baidu Driver: iiau]
+[Models & Raw Results](https://pan.baidu.com/s/1XaXsSrToDqbLLAStJcMr9g) [Baidu Driver: iiau]  
+[Models & Raw Results](https://pan.quark.cn/s/f0d7ac3f9974) [Quark Driver: neYH]
 
 <p align="center">
   <img width="85%" src="https://github.com/laisimiao/MambaVT/blob/main/assets/framework.png" alt="Framework"/>
