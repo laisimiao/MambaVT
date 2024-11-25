@@ -22,6 +22,9 @@ MambaVT is a simple, neat, high-performance **unified Mamba-based tracking frame
 ## Install the environment
 We've tested the results on the PyTorch2.1.1+cuda11.8+Python3.9+causal-conv1d==1.1.0  
 
+:warning: Cuda version must be strictly met, but PyTorch>=2.0 will be fine  
+
+
 **Option1**: Use the Anaconda (CUDA 11.8)
 ```bash
 conda create -n mambavt python=3.9
@@ -41,6 +44,13 @@ pip install torchvision-0.16.1%2Bcu118-cp39-cp39-linux_x86_64.whl
 pip install causal_conv1d-1.1.0+cu118torch2.1cxx11abiFALSE-cp39-cp39-linux_x86_64.whl
 ```
 
+Install `mamba`
+```
+cd mamba-1p1p1
+pip install -e .  # in editor mode
+
+# If compile successfully, selective_scan_cuda.cpython-39-x86_64-linux-gnu.so will be generated
+```
 ## Set project paths
 Run the following command to set paths for this project
 ```
