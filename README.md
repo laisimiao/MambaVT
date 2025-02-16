@@ -1,5 +1,5 @@
 # MambaVT
-The official implementation for the **\[AAAI 2025\]** paper: "MambaVT: Spatio-Temporal Contextual Modeling for robust RGB-T Tracking"
+The official implementation for the paper: "MambaVT: Spatio-Temporal Contextual Modeling for robust RGB-T Tracking"
 
 :rocket: Update Models and Results (2024/08/07)  
 [Models & Raw Results](https://drive.google.com/drive/folders/1Ww-cMuzJ-6XcnTSsPuedlyR_LWSgwAaR?usp=sharing) [Google Driver]  
